@@ -1,0 +1,46 @@
+---
+title: "Frog survival in translocations versus reintroductions"
+date: today
+date-format: long
+format: 
+  html:
+    embed-resources: true
+editor: visual
+execute: 
+  echo: false
+---
+
+```{r}
+#| warning: false
+
+if (!require(librarian)){
+install.packages("librarian")
+library(librarian)
+}
+librarian::shelf(rmarkdown, knitr, here, readr)
+```
+
+### Background
+
+### Study design
+
+```{r}
+#| tbl-cap: "Total number of zoo-reared adult *R. sierrae* released into each of the two study lakes. Note that collect_siteid = 70567 also includes frogs collected from the adjacent 70284, 72458, and 72878."
+#| warning: false
+
+tbl_relocate <- read_csv(here("data", "clean", "tbl_relocate.csv"))
+knitr::kable(tbl_relocate, align = "c")
+```
+
+### Results
+
+For reintroduced versus translocated frogs, the proportion recaptured during subsequent CMR surveys was notably different between the two study lakes.
+In 70611, approximately half of translocated and reintroduced frogs were recaptured.
+In contrast, in 70413, although approximately half of translocated frogs were recaptured, the proportion of reintroduced frogs that were recaptured was substantially less.
+
+![](out/plot_prop_recapture.png){width="400"}
+
+### To do
+
+Create/add figure showing Bd loads of translocated versus reintroduced frogs over time.
+2022 load data is currently missing from database.
