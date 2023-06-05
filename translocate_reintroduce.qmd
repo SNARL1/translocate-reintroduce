@@ -1,5 +1,6 @@
 ---
-title: "Frog survival in translocations versus reintroductions"
+title: "Survival of adult frogs following translocation versus reintroduction"
+author: Roland Knapp
 date: today
 date-format: long
 format: 
@@ -22,25 +23,88 @@ librarian::shelf(rmarkdown, knitr, here, readr)
 
 ### Background
 
+The recovery of mountain yellow-legged frogs (*Rana muscosa*, *Rana sierrae*) across their historical range will require the reestablishment of extirpated populations at hundreds of sites.
+This effort is in its infancy and will depend heavily on both translocations and reintroductions.
+In translocations, adult frogs are collected from large donor populations and moved to suitable recipient sites.
+Reintroductions involve the collection of early life stages, typically eggs or tadpoles, rearing of these animals to adulthood in captivity, and their subsequent reintroduction into the wild.
+During frog recovery efforts conducted to date, we typically use translocations when donor populations containing large numbers adults are present in the vicinity, and utilize reintroductions when adult numbers are too small to allow substantial collections.
+Given the importance of both actions for frog recovery, it is important to gain a better understanding of the effect of these methods on frog survival.
+For example, captive rearing associated with reintroductions typically produces adults with little previous exposure to Bd and, as a result, likely little acquired immunity against Bd infection.
+Following reintroduction, these adults would be expected to develop higher Bd loads and experience lower survival compared to translocated frogs (which are exposed to Bd throughout their adulthood).
+The goal of this study is to compare the survival of frogs translocated versus reintroduced to two recipient sites in Yosemite National Park (70413, 70611).
+
 ### Study design
 
+70413 is part of a complex of fishless lakes, ponds, and streams in the Merced River headwaters.
+To reestablish a frog population in this basin, *R. sierrae* from a donor population in a nearby basin were translocated to 70413 in 2013, 2015, and 2017 (total number of frogs = 48).
+Frogs were also translocated to the nearby 70279 in 2013 and 2015 (total number of frogs = 31).
+As a result, a self-sustaining frog metapopulation was slowly becoming established in this basin.
+70611 is located in the middle portion of the Tuolumne River watershed.
+It contains excellent *R. sierrae* habitat and a large donor population is present nearby.
+Through 2020, 70611 had not yet received any translocations or reintroductions.
+In an effort to (i) accelerate the recovery process in 70413 and vicinity, and (ii) reestablish frogs in 70611, we conducted paired translocations and reintroductions to both sites starting in 2021.
+
+In preparation for the reintroductions to 70413 and 70611, in 2020 and 2021 we collected late-stage tadpoles from the adjacent donor populations and transported them to the San Francisco Zoo for rearing to adulthood (see table below).
+As is typical, at metamorphosis frogs were treated with an anti-fungal drug to clear them of the Bd infection they acquired at the donor site and carried through the rearing process to metamorphosis.
+Neither cohort was exposed as adults to the usual "immune priming" process designed to stimulate acquired immunity against Bd infection (due to the Covid pandemic and associated staffing challenges at the San Francisco Zoo).
+For immune priming, several months prior to release adult frogs in the zoo are exposed to Bd, allowed to develop moderate-level infections, and then cleared with an anti-fungal drug.
+Although were unable to implement immune priming, in the cohorts for release in 2021 and 2022, some adults were found to be Bd-positive during routine testing.
+This is believed to be the result of incomplete clearing of Bd infections at metamorphisis due to the use of an ineffective anti-fungal drug.
+In the 2021-release cohort, the infection was not discovered until just prior to the release date, and as a result the anti-fungal treatment was shorter than usual and at least some frogs were released with low-level Bd infections.
+In the 2022-release cohort, Bd infection in adults occurred again, but fortunately was discovered several months prior to the release date and frogs were immediately given a full anti-fungal treatment and all were complete cleared.
+
+70413 received cohorts of translocated and reintroduced frogs in 2021 and 2022.
+In addition, in these same years the nearby 70279 received reintroduced frogs only.
+70611 received both translocated and reintroduced frogs but only in 2021.
+The paired translocations/reintroductions in 70413 and 70611 allowed the direct comparison of frog survival resulting from each of these recovery actions.
+
 ```{r}
-#| tbl-cap: "Total number of zoo-reared adult *R. sierrae* released into each of the two study lakes. Note that collect_siteid = 70567 also includes frogs collected from the adjacent 70284, 72458, and 72878."
+#| tbl-cap: "Total number of adult *R. sierrae* translocated or reintroduced into the two study lakes. Note that collect_siteid = 70567 also includes frogs collected from the adjacent 70284, 72458, and 72878. The frogs reintroduced to 70279 are not included in the findings described in the Results."
 #| warning: false
 
 tbl_relocate <- read_csv(here("data", "clean", "tbl_relocate.csv"))
 knitr::kable(tbl_relocate, align = "c")
 ```
 
+We surveyed translocated/reintroduced frog populations using capture-mark-recapture (CMR) methods.
+Following addition of frogs, sites were visited 1-2 times per summer.
+During each visit (i.e., primary period), we searched the recipient lakes and all adjacent suitable habitat for frogs on three consecutive days (i.e., secondary periods).
+For 70413, additional nearby sites included in surveys were 70114, 70175, 70279, 71968, 72008, 72093, 72264, 72390, and 72442, and all interconnecting streams.
+In the Results, frog captures at all of these sites are combined under 70413.
+For 70611, no mapped water bodies exist in the immediate vicinity, so surveys focused solely on 70611 and associated inlets, outlets, and wetlands.
+On each survey day, all captured frogs were identified via their PIT tag, measured, weighed, swabbed, and released.
+Within a primary period, frogs that were captured during more than one secondary period were measured, weighed, and swabbed during the first capture, and during subsequent captures were only identified and released.
+Bd loads on skin swabs were determined using standard qPCR methods.
+
 ### Results
 
-For reintroduced versus translocated frogs, the proportion recaptured during subsequent CMR surveys was notably different between the two study lakes.
-In 70611, approximately half of translocated and reintroduced frogs were recaptured.
-In contrast, in 70413, although approximately half of translocated frogs were recaptured, the proportion of reintroduced frogs that were recaptured was substantially less.
+For reintroduced versus translocated frogs, the proportion of frogs recaptured during CMR surveys conducted in 2021 and 2022 was notably different between the two study lakes.
+In 70611, approximately half of frogs in the translocated and reintroduced groups were recaptured.
+In contrast, in 70413, although approximately half of translocated frogs were recaptured, the proportion of reintroduced frogs that were recaptured was substantially less (\~0.2).
+The reason for these between-lake differences in method-specific recapture rates ,is currently unknown.
 
 ![](out/plot_prop_recapture.png){width="400"}
 
+To compare the Bd loads of translocated versus reintroduced frogs, we focused solely on the 2021 cohorts of tranlocated/reintroduced frogs.
+This maximized the temporal scale of the comparison and avoided confounding due to inclusion of cohorts from different years.
+During 2021 and 2022, Bd loads of reintroduced frogs were generally lower than those of translocated frogs.
+This pattern was particulary evident at 70413.
+These results should be interpreted with caution, however, due to the relatively small number of swabs on which these results are based.
+
+![](out/bdload_by_type.png)
+
+### Next steps
+
+In 2023 and subsequent summers, we will continue our CMR surveys at the recipient sites.
+We will also conduct visual encounter surveys (VES) to provide counts of tadpoles and juveniles resulting from reproduction of translocated/reintroduced frogs.
+We plan to conduct an additional paired translocation/reintroduction to 70611 in 2024.
+
 ### To do
 
-Create/add figure showing Bd loads of translocated versus reintroduced frogs over time.
-2022 load data is currently missing from database.
+-   Add mrmr results and figures.
+    In mrmr analysis, relocation type should be included as a covariate.
+
+-   Add information about the in-zoo Bd infection/clearing issues in 2021 and 2022.
+
+-   Map showing the distribution of translocated versus reintroduced frogs at each site.
+    We assume that frogs in the two groups are similarly distributed, but a map might be useful to verify (or refute) this.
